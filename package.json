@@ -1,0 +1,27 @@
+{
+  "name": "savor-sudoku-hodoku-plugin",
+  "version": "0.1.1",
+  "description": "HoDoKu as a Savor Sudoku engine plugin",
+  "license": "GPL-3.0-or-later",
+  "type": "module",
+  "files": [
+    "dist",
+    "assets",
+    "LICENSE",
+    "LICENSE.FDL",
+    "README.md"
+  ],
+  "scripts": {
+    "prebuild": "node scripts/build-learn.mjs",
+    "build": "tsdown",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "hodoku-ts": "github:gil/HoDoKu-ts#c48bc1c0ae560cc66e2e342280a9d6b60ee0a7d9",
+    "savor-sudoku-plugin-api": "github:gil/savor-sudoku-plugin-api#3ea63f003f6d42e4f21be1b84199f2f074fee691"
+  },
+  "devDependencies": {
+    "tsdown": "^0.15.6",
+    "typescript": "^5.9.3"
+  }
+}
