@@ -1,6 +1,6 @@
 {
   "name": "savor-sudoku-hodoku-plugin",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "HoDoKu as a Savor Sudoku engine plugin",
   "license": "GPL-3.0-or-later",
   "type": "module",

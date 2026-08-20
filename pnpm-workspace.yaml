@@ -1,0 +1,2 @@
+allowBuilds:
+  savor-sudoku-plugin-api@git+https://github.com/gil/savor-sudoku-plugin-api.git#3ea63f003f6d42e4f21be1b84199f2f074fee691: true
