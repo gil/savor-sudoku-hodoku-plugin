@@ -8,8 +8,7 @@ Licensed **GPL-3.0-or-later** as a derivative work of HoDoKu. See `LICENSE`.
 The corresponding source is the `src/` directory of this package plus the
 pinned `hodoku-ts` commit in `package.json`.
 
-Declares `generate`, `rate`, and `hint`. Only `generate` has a method in the
-current protocol; the other two are advertised so the host can show them.
+Declares and implements `generate`, `rate`, and `hint`.
 
 ## Learn content
 
