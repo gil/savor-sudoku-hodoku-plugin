@@ -13,7 +13,7 @@
 
 The real challenge is of course to solve the sudoku using only logic. For all but the easiest sudokus that requires more than just staring at the grid and hoping for a revelation. Many techniques have been developed to aid humans in finding possible next steps. Most of these techniques focus on reducing the number of candidates in order to find Singles that really advance the sudoku towards the solution.
 
-The best source for all kinds of information concerning Sudoku (including solving techniques) is still [Sudopedia's Solving Technique Index](http://www.sudopedia.org/wiki/Solving_Technique) which has not only in depth descriptions of a large number of different techniques but lot's of additional information not easily found elsewhere too (e.g. descriptions and techniques for Sudoku variants).
+The best source for all kinds of information concerning Sudoku (including solving techniques) is still [Sudopedia's Solving Technique Index](https://web.archive.org/web/20260606194139/https://www.sudopedia.org/wiki/Solving_Technique) which has not only in depth descriptions of a large number of different techniques but lot's of additional information not easily found elsewhere too (e.g. descriptions and techniques for Sudoku variants).
 
 In this guide about **70 techniques** and variants are described in detail and illustrated with over **170 examples**.
 

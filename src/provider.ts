@@ -12,6 +12,7 @@ import type {
   GenerateResult,
   HintCandidateHighlight,
   HintCellHighlight,
+  HintLink,
   HintPlacement,
   HintResult,
   RateResult,
@@ -59,12 +60,23 @@ function toHighlights(step: Hint): HintResult["highlights"] {
     })),
   ];
 
+  // HoDoKu knows strong from weak for every link it reports, so none of these
+  // go over unsaid. A group or ALS node reports the first of its cells, which is
+  // what hodoku-ts hands over, so the arrow points at that corner of the node
+  // rather than at all of it.
+  const links: HintLink[] = step.links.map((l) => ({
+    from: { cell: l.from.index, digit: l.from.value },
+    to: { cell: l.to.index, digit: l.to.value },
+    strong: l.strong,
+  }));
+
   // No houses: HoDoKu's base/cover entities carry a numeric name constant
   // (BLOCK/LINE/COL) that hodoku-ts does not export, and reading it would
   // couple this plugin to an upstream internal.
   return {
     ...(cells.length === 0 ? {} : { cells }),
     ...(candidates.length === 0 ? {} : { candidates }),
+    ...(links.length === 0 ? {} : { links }),
   };
 }
 

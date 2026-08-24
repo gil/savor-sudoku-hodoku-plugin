@@ -198,7 +198,7 @@ Nice Loops are chains that link back to the cell where they started. To make fin
 
 Take rule number two: If a cell is reached and left on a weak link, the necessary strong link has to occur inside the cell. The cell must therefore be bivalue and the leaving link must have a different digit.
 
-Whether you use those propagation rules or just try to alternate the link types, is of course up to you. The following link leads to a [Nice Loop tutorial](http://www.paulspages.co.uk/sudokuxp/howtosolve/niceloops.htm), that explains the rules in detail and provides lots of examples.
+Whether you use those propagation rules or just try to alternate the link types, is of course up to you. The following link leads to a [Nice Loop tutorial](https://web.archive.org/web/20240326201759/https://paulspages.co.uk/sudokuxp/howtosolve/niceloops.htm), that explains the rules in detail and provides lots of examples.
 
 The link back to the original cell decides the type of the loop: Discontinuous or Continuous. If it provides a contradiction, the loop is discontinuous. Depending on how the loop started, the start digit can either be placed or eliminated. If the loop closes nicely (you could follow the loop around over and over again without detecting an end), the loop is continuous.
 

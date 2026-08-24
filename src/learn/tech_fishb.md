@@ -41,7 +41,7 @@ On the right base sets r247 are combined with cover sets c235 to eliminate 4 fro
 
 # <span id="bf4"></span>Jellyfish
 
-Jellyfishes need four base and four cover sets. Both examples below are taken from the [Pure Jellyfish Collection](http://forum.enjoysudoku.com/viewtopic.php?t=5776) in the [New Sudoku Player's Forum](http://forum.enjoysudoku.com).
+Jellyfishes need four base and four cover sets. Both examples below are taken from the [Pure Jellyfish Collection](https://web.archive.org/web/20250722233732/http://forum.enjoysudoku.com/a-pure-jellyfish-collection-t5776.html) in the [New Sudoku Player's Forum](https://web.archive.org/web/20260718070043/http://forum.enjoysudoku.com/).
 
 ![Sudoku technique: Example for Jellyfish](images/bf401.png) ![Sudoku technique: Example for Jellyfish](images/bf402.png)
 

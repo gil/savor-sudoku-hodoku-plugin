@@ -10,7 +10,7 @@
 
 # <span id="sdc"></span>Sue de Coq
 
-Sue de Coq is a variant of [Subset Counting](http://www.sudopedia.org/wiki/Subset_Counting) and was first introduced by a user with nickname "Sue de Coq" under the somewhat cumbersome name of ["Two-Sector Disjoint Subsets"](http://forum.enjoysudoku.com/viewtopic.php?t=2033). Other users soon started to call the technique by the inventor's nickname "Sue de Coq" (SDC), and that name has been used ever since. The technique in its basic form is rather simple, but it has been enhanced several times. These enhanced versions can be found under [Extended Types](#sdc2) in this guide.
+Sue de Coq is a variant of [Subset Counting](https://web.archive.org/web/20260314050959/https://www.sudopedia.org/wiki/Subset_Counting) and was first introduced by a user with nickname "Sue de Coq" under the somewhat cumbersome name of ["Two-Sector Disjoint Subsets"](https://web.archive.org/web/20241228064605/http://forum.enjoysudoku.com/two-sector-disjoint-subsets-t2033.html). Other users soon started to call the technique by the inventor's nickname "Sue de Coq" (SDC), and that name has been used ever since. The technique in its basic form is rather simple, but it has been enhanced several times. These enhanced versions can be found under [Extended Types](#sdc2) in this guide.
 
 ## <span id="sdc1"></span>Basic Variants
 

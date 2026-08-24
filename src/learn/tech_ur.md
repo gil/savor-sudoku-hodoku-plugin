@@ -25,9 +25,9 @@
 
 ## <span id="un1"></span>Uniqueness in Sudoku
 
-Uniqueness Techniques are based on the fact that practically every Sudoku sudoku ever published has only one solution. More than that: Most Sudoku players consider sudokus with more than one solution invalid! Thus any constellation, that would lead to two or more solutions, that don't violate the Sudoku rule, must be avoided. The problem is, that uniqueness in published sudokus is not part of the Sudoku rule itself ("any row, column, and block must contain the digits 1 through 9"). This has led to a very heated argument, whether Uniqueness Techniques are valid or not (see [Uniqueness Controversy](http://www.sudopedia.org/wiki/Uniqueness_Controversy) at [Sudopedia](http://www.sudopedia.org)).
+Uniqueness Techniques are based on the fact that practically every Sudoku sudoku ever published has only one solution. More than that: Most Sudoku players consider sudokus with more than one solution invalid! Thus any constellation, that would lead to two or more solutions, that don't violate the Sudoku rule, must be avoided. The problem is, that uniqueness in published sudokus is not part of the Sudoku rule itself ("any row, column, and block must contain the digits 1 through 9"). This has led to a very heated argument, whether Uniqueness Techniques are valid or not (see [Uniqueness Controversy](https://web.archive.org/web/20260212041859/https://www.sudopedia.org/wiki/Uniqueness_Controversy) at [Sudopedia](https://web.archive.org/web/20260606202316/https://www.sudopedia.org/)).
 
-Whether you want to use Uniqueness Techniques or not, is entirely a matter of taste. If you solve sudokus published in books or newspapers, you can be reasonably safe that they have a unique solution (for a few exceptions see the [Hall of Shame](http://forum.enjoysudoku.com/viewtopic.php?t=3071)). If you use a computer program like HoDoKu, the number of solutions will be checked automatically and you will get a warning, if you try to solve an invalid sudoku (see the [User Manual](docs_play.php#create_enter_2)).
+Whether you want to use Uniqueness Techniques or not, is entirely a matter of taste. If you solve sudokus published in books or newspapers, you can be reasonably safe that they have a unique solution (for a few exceptions see the [Hall of Shame](https://web.archive.org/web/20230131135535/http://forum.enjoysudoku.com/sudokus-of-shame-t3071.html)). If you use a computer program like HoDoKu, the number of solutions will be checked automatically and you will get a warning, if you try to solve an invalid sudoku (see the [User Manual](docs_play.php#create_enter_2)).
 
 Uniqueness Techniques are easy to find, versatile, and often advance sudokus that without them would require very complicated techniques. HoDoKu has therefore built in support for an extensive number of different techniques. If you don't want to use them (despite their obvious advantages), you can disable all Uniqueness Techniques with a single mouse click by going to "Edit\|Preferences\|Steps" (switch to tree view).
 
@@ -37,7 +37,7 @@ A "Unique Rectangle" (UR) consists of four cells that occupy exactly two rows, t
 
 ![Sudoku technique: Example for Unique+Rectangle+%28Invalid+sudoku%21%29](images/ur01.png)
 
-The example on the left is taken from [Unique Rectangle](http://www.sudopedia.org/wiki/Unique_Rectangle) at [Sudopedia](http://www.sudopedia.org). Take a look at cells r2c13 and r4c13: They satisfy all necessary constraints. Two rows (row 2 and 4), two columns (column 1 and 3), two blocks (blocks 1 and 4) and two candidates (candidates 6 and 8).
+The example on the left is taken from [Unique Rectangle](https://web.archive.org/web/20260314055948/https://www.sudopedia.org/wiki/Unique_Rectangle) at [Sudopedia](https://web.archive.org/web/20260606202316/https://www.sudopedia.org/). Take a look at cells r2c13 and r4c13: They satisfy all necessary constraints. Two rows (row 2 and 4), two columns (column 1 and 3), two blocks (blocks 1 and 4) and two candidates (candidates 6 and 8).
 
 A situation like this is invalid, because the candidates in the cells could be exchanged, thus resulting in two different solutions that both satisfy the sudoku rule (see below). If the sudoku has only one solution, any situation that could lead to a Unique Rectangle must be avoided.
 
@@ -45,7 +45,7 @@ The two (valid) solutions to the UR above:
 
 ![Sudoku technique: Example for Unique+Rectangle+-+Solution+1+%28Invalid+sudoku%21%29](images/ur02.png) ![Sudoku technique: Example for Unique+Rectangle+-+Solution+2+%28Invalid+sudoku%21%29](images/ur03.png)
 
-A common mistake when looking for URs is to violate the "2 blocks" rule (see the [Sudopedia article](http://www.sudopedia.org/wiki/Unique_Rectangle) for an example).
+A common mistake when looking for URs is to violate the "2 blocks" rule (see the [Sudopedia article](https://web.archive.org/web/20260314055948/https://www.sudopedia.org/wiki/Unique_Rectangle) for an example).
 
 ## <span id="un3"></span>Binary Universal Grave (BUG)
 
