@@ -125,18 +125,91 @@ export const PAGES: Readonly<Record<string, readonly string[]>> = {
   "tech_last.php#bf": ["BRUTE_FORCE"],
 };
 
+// Hint penalty tier per anchor, charged as tier*10 seconds (5 for tier 0).
+// Keyed by the same anchors as PAGES, which covers all 109 types exactly once,
+// so every technique gets a tier by construction rather than by a default.
+//
+// The scale is the built-in engine's, so the same technique costs the same
+// whichever engine found it: a single is 1, a basic fish 2, chains and coloring
+// 3, and the things that are closer to searching than reasoning are 5 and 6.
+// Sized families climb with their size, and finned variants sit one tier above
+// the plain fish they extend.
+export const TIERS: Readonly<Record<string, number>> = {
+  "tech_singles.php#fh": 0,
+  "tech_singles.php#h1": 1,
+  "tech_singles.php#n1": 1,
+  "tech_intersections.php#lc1": 1,
+  "tech_intersections.php#lc2": 1,
+  "tech_hidden.php#h2": 2,
+  "tech_hidden.php#h3": 3,
+  "tech_hidden.php#h4": 4,
+  "tech_naked.php#n2": 1,
+  "tech_naked.php#n3": 2,
+  "tech_naked.php#n4": 3,
+  "tech_fishb.php#bf2": 2,
+  "tech_fishb.php#bf3": 3,
+  "tech_fishb.php#bf4": 4,
+  "tech_fishb.php#bf5": 5,
+  "tech_fishfs.php#fbf2": 3,
+  "tech_fishfs.php#fbf3": 4,
+  "tech_fishfs.php#fbf4": 5,
+  "tech_fishfs.php#fbf567": 6,
+  "tech_fishc.php#ff": 6,
+  "tech_fishc.php#mf": 6,
+  "tech_sdp.php#sk": 2,
+  "tech_sdp.php#t2sk": 2,
+  "tech_sdp.php#tf": 2,
+  "tech_sdp.php#er": 3,
+  "tech_ur.php#u1": 2,
+  "tech_ur.php#u2": 2,
+  "tech_ur.php#u3": 3,
+  "tech_ur.php#u4": 3,
+  "tech_ur.php#u5": 3,
+  "tech_ur.php#u6": 3,
+  "tech_ur.php#hr": 2,
+  "tech_ur.php#ar": 4,
+  "tech_ur.php#bug1": 2,
+  "tech_wings.php#xy": 3,
+  "tech_wings.php#xyz": 3,
+  "tech_wings.php#w": 1,
+  "tech_misc.php#sdc": 4,
+  "tech_col.php#sc": 3,
+  "tech_col.php#mc": 3,
+  "tech_chains.php#rp": 2,
+  "tech_chains.php#x": 3,
+  "tech_chains.php#xyc": 3,
+  "tech_chains.php#nl": 3,
+  "tech_chains.php#gnl": 4,
+  "tech_als.php#axz": 3,
+  "tech_als.php#axy": 4,
+  "tech_als.php#ach": 4,
+  "tech_als.php#db": 5,
+  "tech_last.php#ts": 6,
+  "tech_last.php#fc": 5,
+  "tech_last.php#fn": 6,
+  "tech_last.php#kf": 6,
+  "tech_last.php#bf": 6,
+};
+
 const URL_BY_TYPE = new Map<string, string>();
+const TIER_BY_TYPE = new Map<string, number>();
 for (const [page, types] of Object.entries(PAGES)) {
-  for (const type of types) URL_BY_TYPE.set(type, BASE + page);
+  for (const type of types) {
+    URL_BY_TYPE.set(type, BASE + page);
+    const tier = TIERS[page];
+    if (tier !== undefined) TIER_BY_TYPE.set(type, tier);
+  }
 }
 
 export const TECHNIQUES: readonly EngineTechnique[] = SOLUTION_TYPES.filter(
   (type) => !EXCLUDED.has(type),
 ).map((type) => {
   const url = URL_BY_TYPE.get(type);
+  const penalty = TIER_BY_TYPE.get(type);
   return {
     id: type,
     name: typeName(type),
     ...(url === undefined ? {} : { url }),
+    ...(penalty === undefined ? {} : { penalty }),
   };
 });

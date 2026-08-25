@@ -1,6 +1,6 @@
 {
   "name": "savor-sudoku-hodoku-plugin",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "HoDoKu as a Savor Sudoku engine plugin",
   "license": "GPL-3.0-or-later",
   "type": "module",
@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "hodoku-ts": "github:gil/HoDoKu-ts#e5b01c91b9dca647a5cf276d69f311a1517c7fcb",
-    "savor-sudoku-plugin-api": "github:gil/savor-sudoku-plugin-api#cc3b2b5d621d77b88a1fa44f4399bc296ad81446"
+    "savor-sudoku-plugin-api": "github:gil/savor-sudoku-plugin-api#db4d2e2a1bd36d134f0b8368a62df519385d4670"
   },
   "devDependencies": {
     "tsdown": "^0.15.6",
