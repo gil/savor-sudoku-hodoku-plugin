@@ -28,6 +28,7 @@ import { explanationFor } from "./learn.js";
 import { mulberry32 } from "./rng.js";
 import { EXCLUDED, TECHNIQUES } from "./techniques.js";
 import { PLUGIN_VERSION } from "./version.js";
+import { generateInWindow, windowFor } from "./windows.js";
 
 export const ENGINE_ID = "hodoku";
 
@@ -135,15 +136,29 @@ export const hodokuProvider: EngineProvider = {
   manifest: (req) =>
     manifestFor(isLocale(req?.locale) ? req.locale : "en"),
 
-  generate: ({ difficultyId, seed }): GenerateResult => {
+  generate: ({ difficultyId, seed, tier }): GenerateResult => {
     if (!CATALOG.some((d) => d.id === difficultyId)) {
       throw new Error(`unknown difficulty "${difficultyId}"`);
+    }
+    const rng = mulberry32(seed);
+    // A level and rung with a window gets the reject loop; everything else is
+    // upstream's own targeted generator, which is what a direct request for the
+    // level has always been.
+    const aimed = windowFor(difficultyId, tier);
+    if (aimed) {
+      const givens = generateInWindow(aimed, rng);
+      if (!givens) {
+        throw new Error(
+          `hodoku-ts failed to generate a "${difficultyId}" puzzle scoring ${aimed.min}..${aimed.max}`,
+        );
+      }
+      return { givens };
     }
     // shouldCancel / onAttempt stay inside the worker; they are callbacks and
     // the wire protocol forbids callbacks across the boundary.
     const result = hodokuGenerate({
       difficulty: difficultyId as Difficulty,
-      rng: mulberry32(seed),
+      rng,
     });
     if (!result) {
       throw new Error(`hodoku-ts failed to generate a "${difficultyId}" puzzle`);
